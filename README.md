@@ -16,3 +16,12 @@ Com poucos comandos é possível criar os arquivos e rodar migrations, criar see
 
 ## Observações
 Os containeres Artisan e Composer funcionam do seguinte modo: ao digitar os comandos listados, o container é executado, executa os comandos automáticos indicados no entrypoint, executam o comando agregado na linha de comando e em seguida é removido.
+
+Exemplo:
+
+docker compose run --rm composer
+
+docker compose run --rm artisan comando (demonstrado abaixo)
+
+docker compose run --rm artisan make:exception MinhaPrimeiraException
+

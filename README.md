@@ -4,6 +4,8 @@ Este é um modelo para projetos em Laravel que visa facilitar o desenvolvimento,
 Com poucos comandos é possível criar os arquivos e rodar migrations, criar seeders, models, etc. Tudo diretamente do host.
 
 # Alias para executar os scripts:
+- Abra o terminal e digite `nano ~/.bashrc`
+- Cole a função abaixo ao final do arquivo, ou onde preferir.
 ```bash
 make() {
   script_name="$1"
@@ -15,6 +17,8 @@ make() {
   fi
 }
 ```
+- Salve e saia (CTRL + O, Enter, CTRL + X).
+- Atualize a sessão do terminal com `source ~/.bashrc`
 
 ## Passos
 

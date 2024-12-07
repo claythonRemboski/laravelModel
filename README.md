@@ -3,11 +3,24 @@
 Este é um modelo para projetos em Laravel que visa facilitar o desenvolvimento, utilizando containers docker como utilitários.
 Com poucos comandos é possível criar os arquivos e rodar migrations, criar seeders, models, etc. Tudo diretamente do host.
 
+# Alias para executar os scripts:
+```bash
+make() {
+  script_name="$1"
+  script_path="$(pwd)/scripts/$script_name.sh"
+  if [ -f "$script_path" ]; then
+    bash "$script_path"
+  else
+    echo "Script '$script_name.sh' não encontrado!"
+  fi
+}
+```
+
 ## Passos
 
-1. Baixe, clone, faça fork, etc. O que preferir, desde que tenha o projeto em sua máquina host.
+1. Baixe, clone, faça fork, etc. O que preferir, e crie o alias .
 2. Execute o comando abaixo para criar os arquivos do Laravel na pasta src (execute na pasta inicial do projeto):
-    - ```bash create-project.sh```
+    - ```make project  ou bash project.sh```
 3. Coloque os containers em funcionamento com o comando a seguir, automaticament já irão funcionar o php, nginx e mysql:
     - ```docker compose up -d --build server```
 4. Execute a primeira migration:

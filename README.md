@@ -6,8 +6,8 @@ Com poucos comandos é possível criar os arquivos e rodar migrations, criar see
 ## Passos
 
 1. Baixe, clone, faça fork, etc. O que preferir, desde que tenha o projeto em sua máquina host.
-2. Execute o comando abaixo para criar os arquivos do Laravel na pasta src:
-    - ```docker compose run --rm composer create-project --prefer-dist laravel/laravel .```
+2. Execute o comando abaixo para criar os arquivos do Laravel na pasta src (execute na pasta inicial do projeto):
+    - ```bash create-project.sh```
 3. Coloque os containers em funcionamento com o comando a seguir, automaticament já irão funcionar o php, nginx e mysql:
     - ```docker compose up -d --build server```
 4. Execute a primeira migration:

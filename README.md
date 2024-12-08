@@ -42,3 +42,13 @@ docker compose run --rm artisan comando (demonstrado abaixo)
 
 docker compose run --rm artisan make:exception MinhaPrimeiraException
 
+## Listagem dos arquivos de script
+```bash
+for file in scripts/*.sh; do
+  echo "#### $(basename "$file") ####"
+  cat "$file"
+  echo -e "\n"
+done
+```
+
+

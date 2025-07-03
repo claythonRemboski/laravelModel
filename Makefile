@@ -29,7 +29,7 @@ controller:
 	$(run_artisan) make:controller $$controller_name ## Cria um controller padrão
 
 server-up:
-	docker compose up -d server php mysql ## Sobe containers necessários
+	docker compose up -d server ## Sobe containers necessários
 
 factory:
 	$(ask) "Nome da Factory: " factory_name; \
@@ -55,9 +55,7 @@ model:
 	$(run_artisan) make:model $$model_name ## Cria um model
 
 project:
-	mkdir -p src; \
-	sudo chown -R $$(whoami):$$(whoami) ./src; \
-	docker compose run --rm composer create-project --prefer-dist laravel/laravel . ## Cria novo projeto Laravel
+	./scripts/create_project.sh
 
 request:
 	$(ask) "Nome do Request: " request_name; \
@@ -77,7 +75,7 @@ seeder:
 seed:
 	$(run_artisan) db:seed ## Executa os seeders
 
-server:
+server-up:
 	docker compose up -d --build server ## Sobe os containers com build
 
 service:

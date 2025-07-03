@@ -53,17 +53,17 @@ done
 
 echo "Conteineres em funcionamento"
 
-# 4: Função para aguardar comandos de criação de dependências:
-# aguardar_execucao() {
-#     local mensagem="$1"
-#     local comando="$2"
+4: Função para aguardar comandos de criação de dependências:
+aguardar_execucao() {
+    local mensagem="$1"
+    local comando="$2"
 
-#     echo "$mensagem"
-#     until eval "$comando"; do
-#         echo "Aguarde..."
-#         sleep 2
-#     done
-# }
+    echo "$mensagem"
+    until eval "$comando"; do
+        echo "Aguarde..."
+        sleep 2
+    done
+}
 
 # Executando comandos
 # aguardar_execucao "Atualizando dependências com Composer..." "sudo docker compose exec ${DB_CONTAINER_NAME} composer install"
